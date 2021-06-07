@@ -110,6 +110,7 @@ function gotStream(stream) {
   analyser = audioContext.createAnalyser();
   analyser.fftSize = 2048;
   mediaStreamSource.connect(analyser);
+  controlMicrophoneButton();
   updatePitch();
 }
 
@@ -165,7 +166,6 @@ function toggleLiveInput() {
       },
     }, gotStream
   );
-  controlMicrophoneButton();
 }
 
 function togglePlayback() {
